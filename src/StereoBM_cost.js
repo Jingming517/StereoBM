@@ -59,26 +59,21 @@ gradient_descent(x,y);
 
 
 
-
-
-
-
 //转换灰度值
 // perform histgram equalization for single channel image
 //记录每个像素点的灰度值
 //白色为255，黑色为0
 var pixelGray = new Array();
-function Convert256toGray(){
 
-   
-
+//返回一个长度为120000的数组， 从上到下从左到右每个像素点的灰度值
+function Convert256toGray()
+{
     var c=document.getElementById("canvas");
 
     //getContext() 方法返回一个用于在画布上绘图的环境。
     //Canvas.getContext(contextID)
     //该对象导出一个二维绘图 API
     var ctx=c.getContext("2d");
-
 
     //getImageData
     //复制画布上指定矩形的像素数据 （R G B | 0~255)
@@ -94,8 +89,8 @@ function Convert256toGray(){
     //G - 绿色（0-255）
     //B - 蓝色（0-255）
     //A - alpha 通道（0-255; 0 是透明的，255 是完全可见的）
-    //var count = 0;
 
+    //120000 iterations (120000 pixel)
     for (var i=0;i<imgData.data.length;i+=4)
     {
         var R = imgData.data[i]; //R(0-255)
@@ -103,28 +98,21 @@ function Convert256toGray(){
         var B = imgData.data[i+2]; //G(0-255)
         var Alpha = imgData.data[i+3]; //Alpha(0-255)
         //计算灰度值
+        //从左到右 从上到下 每个像素点一个灰度值
         pixelGray[i/4] = R*0.299 + G*0.587 + B*0.114;
         //把像素数据转换为对应的灰度值
         imgData.data[i] = pixelGray[i/4];
         imgData.data[i+1] = pixelGray[i/4]; 
-        imgData.data[i+2] = pixelGray[i]/4; 
-        imgData.data[i+3] = Alpha; 
-
-        //从左到右 从上到下 每个像素点一个灰度值
-        //pixelGray[i/4] = gray;
-        //count ++;
-        //document.write (gray + " ");
-        //pixelGray[i+1] = gray; 
-        //pixelGray[i+2] = gray; 
-        //pixelGray[i+3] = Alpha; 
+        imgData.data[i+2] = pixelGray[i/4]; 
+        imgData.data[i+3] = Alpha;  
      }
     //通过 putImageData() 将图像数据放回画布： （过后删除）
     //ctx.putImageData(imgData,0,0);
     for (var j=0; j< pixelGray.length; j++){
         document.write (pixelGray[j] + " ");
     }
-    
 }
+
 
 
 
@@ -164,3 +152,6 @@ function loadCanvas(){
         ctx.drawImage(img,0,0,c_w,c_h);
     } 
 }
+
+
+
