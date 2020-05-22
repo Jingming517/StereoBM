@@ -1,6 +1,6 @@
 function findStereoCorrespondenceBM(left, right, disp, const, state, buf, _dy0, dy1, disp_shift)
 {   
-    //变量最后改
+
     var SADWindowSize; //SAD窗口大小
     const ALIGN = 16;
     var x, y, d;
