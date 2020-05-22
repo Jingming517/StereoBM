@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>StereoBM_test1.0</title>
+
+        
+        <script language="javascript" src="StereoBM_cost.js"></script>
+        //Image frame
+        <style type="text/css">
+            .scream{
+                width:400px;
+                height:300px;
+                position: absolute;
+                top:60px;
+                border: 1px solid;
+            }
+
+            #canvas{
+                position: absolute;
+                top:60px;
+                left:500px;
+                border: 1px dashed;
+            }
+
+        </style>
+    </head>
+
+    <body>
+
+        <input type="file" onchange="loadImg()"/>
+        <input type="button" value="TurnGrey" onclick="Convert256toGray()"/>
+        <br/><br/>
+        <div class="scream">
+        <img id="scream" width="400px" height="300px" alt="Image preview...">
+        </div>
+        <canvas id="canvas" width="400px;" height="300px;">
+        your browser does not support canvas!
+        </canvas>
+
+    </body>
+</html>
