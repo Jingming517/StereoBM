@@ -2,7 +2,6 @@
 Generates depth map from stereo pair images.  
 Written in JavaScript.  
 ![Image](https://github.com/Jingming517/StereoBM/blob/master/images/StereoBM_Webpage.png)  
-[Webpage link](https://jingming517.github.io/)   
 
 ## Program Algorithm
 - The program takes in image data and load the images onto canvas.  
