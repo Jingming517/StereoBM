@@ -1,4 +1,3 @@
-# Jingming517.github.io
 Generates depth map from stereo pair images.  
 Written in JavaScript.  
 ![Image](https://github.com/Jingming517/StereoBM/blob/master/images/StereoBM_Webpage.png)  
